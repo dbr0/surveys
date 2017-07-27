@@ -4,13 +4,4 @@
     "type": "library",
     "minimum-stability": "dev",
     "require": {},
-    "autoload": {
-        "classmap": [
-            "database"
-        ],
-        "psr-4": {
-            "App\\": "app/",
-            "dbr0\\surveys\\": "packages/dbr0/surveys/src"
-        }
-    }
 }
