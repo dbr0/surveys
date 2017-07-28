@@ -46,7 +46,10 @@ class SurveysServiceProvider extends ServiceProvider
 
         //register controller or something(?)
         $this->app->make('dbr0\surveys\SurveysController');
+<<<<<<< HEAD
         $this->app->make('dbr0\surveys\SurveysController');
+=======
+>>>>>>> d8d600ee9c95bb909f59d8b8a1828440da662690
 
         //merge config
         $this->mergeConfigFrom(
