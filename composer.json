@@ -1,7 +1,22 @@
 {
     "name": "dbr0/surveys",
     "description": "Survey Laravel package",
+    "keywords": ["laravel", "surveys"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dbr0"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "dbr0\\surveys\\": "src/"
+        }
+    },
     "type": "library",
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "illuminate/support": "~5",
+        "illuminate/http": "~5"
+    }
 }

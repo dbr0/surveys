@@ -9,7 +9,25 @@ class SurveysController extends Controller
 
     public function index()
     {
-        echo 'Here we are!';
+        $surveys = Survey::all();
+        return view('vendor.dbr0-surveys.index',compact('surveys'));
+    }
+
+    public function create()
+    {
+        return view('vendor.dbr0-surveys.create');
+    }
+
+    public function store()
+    {
+        Survey::create([
+           'name' => request()->name,
+           'slug' => request()->name,
+           'description' => request()->description,
+           'parent_id' => request()->parent,
+        ]);
+
+        return redirect()->route('dbr0_surveys/index');
     }
 
 }

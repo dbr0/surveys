@@ -32,6 +32,16 @@ class SurveysServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/Migrations' => $this->app->databasePath() . '/migrations'
         ], 'migrations');
+
+        /*
+         * HOW TO PUBLISH:
+         * >> php artisan vendor:publish --provider="dbr0\surveys\SurveysServiceProvider" --tag=views
+         *
+         *  */
+        //enable publishing of views
+        $this->publishes([
+            __DIR__ . '/views' => $this->app->basePath().'/resources/views/vendor/dbr0-surveys',
+        ],'views');
     }
 
     /**
@@ -51,5 +61,10 @@ class SurveysServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/main.php', 'dbr0-surveys-main'
         );
+
+        //get Survey - facade
+        $this->app->bind('dbr0-surveys', function() {
+            return new Survey;
+        });
     }
 }
