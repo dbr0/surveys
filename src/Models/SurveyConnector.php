@@ -38,4 +38,14 @@ class SurveyConnector extends Model
     {
         return $this->belongsTo('App\\Survey','survey_id');
     }
+
+    /**
+     * Get Questions of this Connector
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function questions()
+    {
+        return $this->hasMany('App\\SurveyQuestion','survey_id');
+    }
 }
