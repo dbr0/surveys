@@ -6,19 +6,29 @@ class CreateDbr0SurveysTable extends Migration
 {
     public function up()
     {
-        Schema::create('dbr0_surveys', function(Blueprint $t)
+        Schema::create('dbr0_surveys', function(Blueprint $table)
         {
-            $t->increments('id')->unsigned();
-            $t->timestamps();
+            $table->increments('id')->unsigned();
+            $table->timestamps();
 
-            $t->string('name');
-            $t->string('slug');
-            $t->text('description');
+            $table->string('name');
+            $table->string('slug');
+            $table->text('description');
+        });
+
+        Schema::table('dbr0_surveys', function(Blueprint $table)
+        {
+            $table->index('parent_id');
         });
     }
 
     public function down()
     {
+        Schema::table('dbr0_surveys', function(Blueprint $table)
+        {
+            $table->dropIndex(['parent_id']);
+        });
+
         Schema::drop('dbr0_surveys');
     }
 }
