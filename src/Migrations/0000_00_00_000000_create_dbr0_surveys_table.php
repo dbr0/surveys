@@ -14,6 +14,7 @@ class CreateDbr0SurveysTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description');
+            $table->integer('parent_id')->unsigned();
         });
 
         Schema::table('dbr0_surveys', function(Blueprint $table)
