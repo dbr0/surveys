@@ -45,7 +45,7 @@ class SurveysServiceProvider extends ServiceProvider
 
         /*
          * HOW TO PUBLISH:
-         * >> php artisan vendor:publish --provider="dbr0\surveys\SurveysServiceProvider" --tag=views
+         * >> php artisan vendor:publish --provider="dbr0\surveys\SurveysServiceProvider" --tag=middleware
          *
          *  */
         //enable publishing of views
