@@ -15,11 +15,7 @@ class Survey extends Model
      *
      * @var string
      */
-<<<<<<< HEAD
     protected $table = 'dbr0_surveys';
-=======
-    protected $table = 'surveys';
->>>>>>> d8d600ee9c95bb909f59d8b8a1828440da662690
 
     /**
      * The attributes that are mass assignable.
