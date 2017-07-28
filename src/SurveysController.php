@@ -3,7 +3,6 @@
 namespace dbr0\surveys;
 
 use App\Http\Controllers\Controller;
-use App\User;
 
 class SurveysController extends Controller
 {
@@ -16,8 +15,8 @@ class SurveysController extends Controller
 
     public function create()
     {
-        $parents = User::get();
-        return view('vendor.dbr0-surveys.create',compact('parents'));
+        $owners = str_replace('/','\\',config('dbr0-surveys.main.owner_model'))::get();
+        return view('vendor.dbr0-surveys.create',compact('owners'));
     }
 
     public function store()
@@ -30,6 +29,12 @@ class SurveysController extends Controller
         ]);
 
         return redirect()->route('dbr0_surveys/index');
+    }
+
+    public function show($id)
+    {
+        $survey = Survey::find($id);
+        return view('vendor.dbr0-surveys.show',compact('survey'));
     }
 
 }

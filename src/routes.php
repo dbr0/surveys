@@ -18,3 +18,9 @@ Route::post(config('dbr0-surveys.main.routes.root','surveys').'/store',
         'as' => 'dbr0_surveys/store',
         'uses' => 'dbr0\surveys\SurveysController@store'
     ]);
+Route::get(config('dbr0-surveys.main.routes.root','surveys').'/{id?}',
+    [
+        'middleware' => config('dbr0-surveys.main.routes.middleware_show',[]),
+        'as' => 'dbr0_surveys/show',
+        'uses' => 'dbr0\surveys\SurveysController@show'
+    ]);

@@ -36,6 +36,6 @@ class Survey extends Model
      */
     public function owner()
     {
-        return $this->belongsTo('App\\'.config('dbr0-surveys.main.owner_model') ?: 'User','parent_id');
+        return $this->belongsTo(config('dbr0-surveys.main.owner_model') ? str_replace('/','\\', config('dbr0-surveys.main.owner_model')) : 'App\\User','parent_id');
     }
 }
