@@ -9,7 +9,13 @@ class SurveysController extends Controller
 
     public function index()
     {
-        $surveys = Survey::with('owner')->get();
+        //check if middleware has limited surveys
+        if(request()->visibleSurveys) {
+            $surveys = Survey::with('owner')->whereIn('id',request()->visibleSurveys)->get();
+        } else { //get all surveys
+            $surveys = Survey::with('owner')->get();
+        }
+
         return view('vendor.dbr0-surveys.index',compact('surveys'));
     }
 

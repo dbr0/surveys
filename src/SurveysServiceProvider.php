@@ -42,6 +42,16 @@ class SurveysServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/views' => $this->app->basePath().'/resources/views/vendor/dbr0-surveys',
         ],'views');
+
+        /*
+         * HOW TO PUBLISH:
+         * >> php artisan vendor:publish --provider="dbr0\surveys\SurveysServiceProvider" --tag=views
+         *
+         *  */
+        //enable publishing of views
+        $this->publishes([
+            __DIR__ . '/Middleware' => $this->app->basePath().'/app/Http/Middleware',
+        ],'middleware');
     }
 
     /**

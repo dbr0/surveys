@@ -8,6 +8,7 @@ namespace dbr0\surveys;
  * @property $description
  * */
 use Illuminate\Database\Eloquent\Model;
+
 class Survey extends Model
 {
     /**
