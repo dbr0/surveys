@@ -1,10 +1,9 @@
 <form action="{{ route('dbr0_surveys/store') }}" method="POST">
     Parent:<br>
     <select name="parent">
-        <option value="1">Volvo</option>
-        <option value="2">Saab</option>
-        <option value="3">Mercedes</option>
-        <option value="4">Audi</option>
+        @foreach($parents as $parent)
+            <option value="{{ $parent->id }}">{{ $parent->name ?: $parent->id }}</option>
+        @endforeach
     </select><br>
 
     First name:<br>
