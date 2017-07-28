@@ -12,7 +12,7 @@ class CreateDbr0SurveysConnectorsTable extends Migration
             $table->timestamps();
 
             $table->integer('survey_id')->unsigned();
-            $table->tinyInteger('type_id')->unsigned();
+            $table->tinyInteger('type_id')->unsigned()->nullable();
             $table->integer('option_id')->unsigned();
         });
 
