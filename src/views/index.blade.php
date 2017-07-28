@@ -4,7 +4,7 @@
 
 <ul>
     @foreach($surveys as $survey)
-        <li><a href="{{ route('dbr0_surveys/show',$survey->id) }}">{{ $survey->id }} | {{ $survey->name }} - {{ $survey->slug }} - {{ $survey->description }} - Parent: {{ $survey->parent_id }}</a></li>
+        <li><a href="{{ route('dbr0_surveys/show',$survey->id) }}">{{ $survey->id }} | {{ $survey->name }} - {{ $survey->slug }} - {{ $survey->description }} - Owner: {{ $survey->parent_id }}</a></li>
     @endforeach
 </ul>
 

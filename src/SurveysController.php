@@ -27,20 +27,30 @@ class SurveysController extends Controller
 
     public function store()
     {
-        Survey::create([
+        $survey = Survey::create([
            'name' => request()->name,
            'slug' => request()->name,
            'description' => request()->description,
            'parent_id' => request()->parent,
         ]);
 
-        return redirect()->route('dbr0_surveys/index');
+        return redirect()->route('dbr0_surveys/show',$survey->id);
     }
 
     public function show($id)
     {
         $survey = Survey::find($id);
         return view('vendor.dbr0-surveys.show',compact('survey'));
+    }
+
+    public function edit($id)
+    {
+        dd('edit: '.$id);
+    }
+
+    public function update($id)
+    {
+        dd('update: '.$id);
     }
 
 }

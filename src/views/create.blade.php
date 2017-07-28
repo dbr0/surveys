@@ -1,6 +1,6 @@
 <form action="{{ route('dbr0_surveys/store') }}" method="POST">
     Parent:<br>
-    <select name="parent">
+    <select name="owner">
         @foreach($owners as $owner)
             <option value="{{ $owner->id }}">{{ $owner->name ?: $owner->id }}</option>
         @endforeach
