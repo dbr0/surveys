@@ -1,0 +1,7 @@
+{
+    "name": "dbr0/surveys",
+    "description": "Survey Laravel package",
+    "type": "library",
+    "minimum-stability": "dev",
+    "require": {}
+}
